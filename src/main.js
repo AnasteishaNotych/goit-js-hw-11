@@ -10,7 +10,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
 const userInput = document.querySelector('input');
-const startButton = document.querySelector('button');
 
 form.addEventListener('submit', handleForm);
 
@@ -18,7 +17,7 @@ function handleForm(event) {
   event.preventDefault();
   const query = userInput.value.trim();
   if (query === '') {
-    throw new Error();
+    return;
   }
   clearGallery();
   showLoader();
